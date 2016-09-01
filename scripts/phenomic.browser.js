@@ -6,6 +6,8 @@ import store from "../web_modules/app/store"
 
 import phenomicClient from "phenomic/lib/client"
 
+import "highlight.js/styles/github.css"
+
 phenomicClient({
   metadata,
   routes,

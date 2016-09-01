@@ -1,4 +1,7 @@
 /* Using global sytles is not recommended, prefer local styles via CSS Modules */
+@import url("http://overpass-30e2.kxcdn.com/overpass.css");
+@import url("http://fonts.googleapis.com/earlyaccess/cwtexhei.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 
 /*
  * box model like it should be
@@ -27,15 +30,16 @@ body {
  */
 html {
   min-height: 100%;
-  background: color(#deecf1 a(0.4));
+  background: #FFF;
 }
 
 body {
-  font-size: 1rem;
-  line-height: 1.5rem;
-
+  letter-spacing: 0.15em;
+  color: #333;
+  font-size: 16px;
+  line-height: 2;
   /* system font https://medium.com/designing-medium/system-shock-6b1dc6d6596f */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Overpass', 'cwTeXHei', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 /*
@@ -61,8 +65,13 @@ body {
   margin-left: calc(-1 * (var(--phenomic-HeadingAnchor-width) + var(--phenomic-HeadingAnchor-margin)));
   margin-right: var(--phenomic-HeadingAnchor-margin);
   width: var(--phenomic-HeadingAnchor-width);
-  line-height: var(--phenomic-HeadingAnchor-width);
   text-decoration: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 2;
 
   opacity: 0.1;
   transition: opacity 0.2s;
@@ -75,4 +84,33 @@ body {
 /* minimal styling, prefer removing this and use local styles */
 a {
   color: #0e63e3;
+}
+
+pre {
+  margin: 20px 0;
+
+  /* overwrite inline code style */
+  & code {
+    background-color: none;
+    padding: 0;
+  }
+}
+
+code {
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  font-family: 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+
+  /* inline code style */
+  background-color: #F8F8F8;
+  padding: 0.2em;
+}
+
+p {
+  margin-bottom: 2.5em;
+}
+
+h2 {
+  margin-top: 40px;
 }

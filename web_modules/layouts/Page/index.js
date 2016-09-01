@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from "react"
 import Helmet from "react-helmet"
 import invariant from "invariant"
 import { BodyContainer, joinUri } from "phenomic"
+import styles from "./Page.css"
 
 class Page extends Component {
   render() {
@@ -54,7 +55,11 @@ class Page extends Component {
           <h1>{ head.title }</h1>
         }
         { header }
-        <BodyContainer>{ body }</BodyContainer>
+        <div className={ styles.body }>
+          <BodyContainer>
+            { body }
+          </BodyContainer>
+        </div>
         { props.children }
         { footer }
       </div>

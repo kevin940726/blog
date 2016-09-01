@@ -2,7 +2,7 @@ import path from "path"
 
 import webpack from "webpack"
 import ExtractTextPlugin from "extract-text-webpack-plugin"
-import { phenomicLoader } from "phenomic"
+import { phenomicLoader, phenomicLoaderPresets } from "phenomic"
 
 import pkg from "./package.json"
 
@@ -82,6 +82,15 @@ export const makeConfig = (config = {}) => {
             [ "css-loader", "postcss-loader" ].join("!"),
           ),
         },
+        // node_modules *.css => global (normal) css
+        {
+          test: /\.css$/,
+          include: path.resolve(__dirname, "node_modules"),
+          loader: ExtractTextPlugin.extract(
+            "style-loader",
+            "css-loader",
+          ),
+        },
         // ! \\
         // If you want global CSS only, just remove the 2 sections above
         // and use the following one
@@ -127,7 +136,7 @@ export const makeConfig = (config = {}) => {
 
     phenomic: {
       context: path.join(__dirname, config.source),
-      // plugins: [ ...phenomicLoaderPresets.markdown ]
+      plugins: [ ...phenomicLoaderPresets.markdown ],
       // see https://phenomic.io/docs/usage/plugins/
       feedsOptions: {
         title: pkg.name,
@@ -146,7 +155,7 @@ export const makeConfig = (config = {}) => {
     },
 
     postcss: () => [
-      require("stylelint")(),
+      // require("stylelint")(),
       require("postcss-cssnext")({ browsers: "last 2 versions" }),
       require("postcss-reporter")(),
       ...!config.production ? [
