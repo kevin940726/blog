@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from "react"
+import dateFormat from "dateformat"
 
 import Page from "../Page"
+import styles from "./Post.css"
 
 class Post extends Component {
 
@@ -16,11 +18,11 @@ class Post extends Component {
       <Page
         { ...props }
         header={
-          <header>
+          <header className={ styles.header }>
           {
             pageDate &&
             <time key={ pageDate.toISOString() }>
-              { pageDate.toDateString() }
+              { dateFormat(pageDate, "yyyy/mm/dd") }
             </time>
           }
           </header>

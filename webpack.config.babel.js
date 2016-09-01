@@ -152,6 +152,7 @@ export const makeConfig = (config = {}) => {
           },
         },
       },
+      pruneString: "",
     },
 
     postcss: () => [

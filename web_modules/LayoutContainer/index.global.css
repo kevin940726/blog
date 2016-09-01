@@ -83,7 +83,11 @@ body {
 
 /* minimal styling, prefer removing this and use local styles */
 a {
-  color: #0e63e3;
+  color: #2196F3;
+
+  &:hover {
+    color: color(#2196F3 a(70%));
+  }
 }
 
 pre {

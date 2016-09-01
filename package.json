@@ -36,7 +36,11 @@
       "eslint-config-i-am-meticulous/react"
     ],
     "rules": {
-      "react/prefer-stateless-function": 0
+      "react/prefer-stateless-function": 0,
+      "max-len": [
+        1,
+        120
+      ]
     }
   },
   "eslintConfigRuleReact/prefer-stateless-function": "https://github.com/MoOx/phenomic/issues/46",
@@ -83,6 +87,7 @@
     "whatwg-fetch": "^0.11.0"
   },
   "dependencies": {
+    "dateformat": "^1.0.12",
     "highlight.js": "^9.6.0",
     "jss": "^5.4.0",
     "jss-preset-default": "^0.2.0"

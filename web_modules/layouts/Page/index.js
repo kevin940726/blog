@@ -44,7 +44,7 @@ class Page extends Component {
     ]
 
     return (
-      <div>
+      <div className={ styles.page }>
         <Helmet
           title={ metaTitle }
           meta={ meta }
@@ -55,11 +55,13 @@ class Page extends Component {
           <h1>{ head.title }</h1>
         }
         { header }
-        <div className={ styles.body }>
-          <BodyContainer>
-            { body }
-          </BodyContainer>
-        </div>
+        { body.trim() && (
+          <div className={ styles.body }>
+            <BodyContainer>
+              { body }
+            </BodyContainer>
+          </div>
+        ) }
         { props.children }
         { footer }
       </div>
