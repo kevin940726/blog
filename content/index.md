@@ -1,4 +1,4 @@
 ---
-title: Kai Hao's Blog
+title: ''
 layout: Homepage
 ---
