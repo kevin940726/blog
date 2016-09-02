@@ -90,6 +90,8 @@
     "dateformat": "^1.0.12",
     "highlight.js": "^9.6.0",
     "jss": "^5.4.0",
-    "jss-preset-default": "^0.2.0"
+    "jss-preset-default": "^0.2.0",
+    "react-addons-shallow-compare": "^15.3.1",
+    "react-virtualized": "^7.22.2"
   }
 }
