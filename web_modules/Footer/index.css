@@ -1,16 +1,12 @@
 .footer {
   margin-top: 1rem;
   padding: 1rem;
-  font-size: 0.75rem;
+  font-size: 12px;
   text-align: center;
+  color: #999;
 }
 
 .link {
-  opacity: 0.4;
-  color: inherit;
+  color: #999;
   text-decoration: none;
-}
-
-.reference {
-  font-weight: 100;
 }
