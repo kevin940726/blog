@@ -41,6 +41,7 @@ export default class Header extends Component {
             { pkg.repository &&
               <a
                 href={ pkg.repository }
+                target="_blank"
                 className={ styles.link }
               >
                 <Svg svg={ gitHubSvg } />
