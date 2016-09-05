@@ -3,7 +3,7 @@
   "name": "blog",
   "homepage": "https://kevin940726.github.io/blog",
   "twitter": "",
-  "repository": "",
+  "repository": "git@github.com:kevin940726/blog.git",
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore --fix .",
     "lint:css": "stylelint \"web_modules/**/*.css\"",
@@ -11,7 +11,9 @@
     "start": "phenomic start",
     "build": "phenomic build",
     "pretest": "npm run lint",
-    "test": "npm run build"
+    "test": "npm run build",
+    "predeploy": "npm run build",
+    "deploy": "./scripts/deploy.sh"
   },
   "phenomic": {
     "CNAME": true
