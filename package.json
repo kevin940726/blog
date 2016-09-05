@@ -17,7 +17,7 @@
     "deploy": "./scripts/deploy.sh"
   },
   "phenomic": {
-    "CNAME": true
+    "CNAME": false
   },
   "babel": {
     "presets": [
